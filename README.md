@@ -1,80 +1,78 @@
-####  #dancer2_sqlite_app_block_table
-####dancer2_sqlite_app_block_tablev1.git
+#####  #dancer2_sqlite_app_block_table
+#### dancer2_sqlite_app_block_tablev1.git
 
 ### 10/24/2021
 
 The goal is to create a lightweight Perl based web app which uses a flat file stucture and which is Docker ready (portable).
 
-###DESCRIPTION
+### DESCRIPTION
 
-*Entries 6 fields.
-*FIRST entry for every Unique parent must start with "none" as 
+* Entries 6 fields.
+* FIRST entry for every Unique parent must start with "none". 
 
+  * _This may not be accurate._  
+  * _The fields are messed._  
+    * _category=used for date_
+    * _status=used for note_
 
-  *This may not be accurate.  
-  *The fields are messed.  
-    *category=used for date
-    *status=used for note
-
-####SUMMARY OF DATA ISSUES:
+#### SUMMARY OF DATA ISSUES
     FIELD  | Example Values             | NOTES
 -----------|----------------------------|------------
         id | 1                          | ok
     parent | none                       | ok
- entryDate | Initiative                 | WRONG!
-  category | 04-20-2021                 | WRONG!
+ entryDate | Initiative                 | WRONG
+  category | 04-20-2021                 | WRONG
      title | Project1                   | ok
-      text | XJH                        | WRONG!
-    status | Project 1 Super Project.   | WRONG!
+      text | XJH                        | WRONG
+    status | Project 1 Super Project.   | WRONG
 
 
-
-
-
-###HOW TO RUN IT
+### HOW TO RUN IT
  
-####OPTIONS:
+#### OPTIONSS
 
-#####USING PLACKUP
-
+##### USING PLACKUP
+```
   sudo /usr/local/bin/plackup bin/app.psgi --port 5009 --host 0.0.0.0
 
   /usr/local/bin/plackup bin/app.psgi --port 5009 --host 0.0.0.0
+```
 
-
-#####USING STARMAN
+##### USING STARMAN
+```
 starman --port 5009 --host 0.0.0.0 --workers=1 bin/app.psgi
+```
 
-
-#####USING STARMAN WITH SSL
+##### USING STARMAN WITH SSL
+```
 starman --port 5009 --host 0.0.0.0 --enable-ssl --ssl-key=/data/host.key --ssl-cert=/data/host.cert --workers=10 bin/app.psg
-
-  *Note: host.key and host.cert need to be present on the volume when running the docker command:
-    *Ex:
+```
+  * Note: host.key and host.cert need to be present on the volume when running the docker command:
+```    
    docker run -v /Users/paulhaigh/docker/data:/data --name CAP23 -it -p 5003:5003 centos_7_3_dev_vm
-
-    *Some unresolved issue with accepting un-signed cert, have to accept many many times to access page in Safari.
-    *Also issues managing session whereby although you successfully log in, this is not maintained when switching to page to save changes.  Needs more research.
-    *Also need to research the Starman multiple worker feature.
-
-
-###NOTE
-*Using the docker image to develope the docker image.
-*This (may) mean creating a new repo every time.
-
-####GIT COMMANDS:
-
-  *echo "# dancer2_sqlite_app_block_tablev1" >> README.md
-  *git init
-  *git add README.md
-  *git add .
-  *git commit -m "first commit"
-  *git branch -M main
-  *git remote add origin https://github.com/kirvam/dancer2_sqlite_app_block_tablev1.git
-  *git push -u origin main
+```
+    * Some unresolved issue with accepting un-signed cert, have to accept many many times to access page in Safari.
+    * Also issues managing session whereby although you successfully log in, this is not maintained when switching to page to save changes.  Needs more research.
+    * Also need to research the Starman multiple worker feature. USE 1 worker or Update fails.
 
 
-###VERSION OF DOCKERFILE
+### NOTE
+* Using the docker image to develope the docker image.
+* This (may) mean creating a new repo every time.
+
+#### GIT COMMANDS:
+```
+  echo "# dancer2_sqlite_app_block_tablev1" >> README.md
+  git init
+  git add README.md
+  git add .
+  git commit -m "first commit"
+  git branch -M main
+  git remote add origin https://github.com/kirvam/dancer2_sqlite_app_block_tablev1.git
+  git push -u origin main
+```
+
+### VERSION OF DOCKERFILE
 
 ```
 FROM centos:7.3.1611
