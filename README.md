@@ -17,7 +17,7 @@ The goal is to create a lightweight Perl based web app which uses a flat file st
 
 #### SUMMARY OF DATA ISSUES
     FIELD  | Example Values             | NOTES
------------|----------------------------|------------
+---------- | -------------------------- | ------------
         id | 1                          | ok
     parent | none                       | ok
  entryDate | Initiative                 | WRONG
@@ -29,7 +29,7 @@ The goal is to create a lightweight Perl based web app which uses a flat file st
 
 ### HOW TO RUN IT
  
-#### OPTIONSS
+#### OPTIONS
 
 ##### USING PLACKUP
 ```
