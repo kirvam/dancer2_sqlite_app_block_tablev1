@@ -16,17 +16,17 @@ The goal is to create a lightweight Perl based web app which uses a flat file st
     * _status=used for note_
 
 #### SUMMARY OF DATA ISSUES
-
-    FIELD | Example Values | NOTES
---------- | -------------- | -----
-id | 1 | ok
-parent | none | ok
-entryDate | Initiative | WRONG
-category | 04-20-2021 | WRONG
-title | Project1 | ok
-text | XJH | WRONG
-status | Project 1 Super Project | WRONG
-
+```
+    FIELD | Example Values          | NOTES
+--------- | ----------------------- | -----
+       id | 1                       | ok
+   parent | none                    | ok
+entryDate | Initiative              | WRONG
+ category | 04-20-2021              | WRONG
+    title | Project1                | ok
+     text | XJH                     | WRONG
+   status | Project 1 Super Project | WRONG
+```
 
 ### HOW TO RUN IT
  
