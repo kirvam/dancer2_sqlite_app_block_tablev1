@@ -573,7 +573,7 @@ post '/addTESTBx' => sub {
     my $sth = $db->prepare($sql) or die $db->errstr;
     $sth->execute(params->{'parent'},params->{'entryDate'},params->{'title'},params->{'category'},params->{'text'},params->{'status'}) or die $sth->errstr;
     set_flash('<H3>New TESTBx entry posted!</H3>');
-    redirect '/TESTBix';
+    redirect '/TESTBx';
 };
 
 ###

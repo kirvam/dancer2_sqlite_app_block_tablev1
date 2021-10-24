@@ -344,15 +344,15 @@ post '/addTESTBx' => sub {
     my $sql = 'insert into entries (parent, entryDate, title, category, text, status) values (?, ?, ?, ?, ?, ?)';
     my $sth = $db->prepare($sql) or die $db->errstr;
       $sth->execute(params->{'parent'},params->{'entryDate'},params->{'title'},params->{'category'},params->{'text'},params->{'status'}) or die $sth->errstr;
-       set_flash('New TESTB entry posted!');
-       redirect '/TESTB';
+       set_flash('New TESTBx entry posted!');
+       redirect '/TESTBx';
 };
 
 
 hook before_template_render => sub {
     my $tokens = shift;
     $tokens->{'css_url'} = request->base . 'css/style_1x.css';
-    $tokens->{'login_url'} = uri_for('/loginTESTB');
+    $tokens->{'login_url'} = uri_for('/loginTESTBx');
     $tokens->{'logout_url'} = uri_for('/logout');
 };
 
